@@ -1,0 +1,1751 @@
+///////////////////////////////////////////////////////////////////////////
+
+// —— variables ——
+
+// fonts
+$Ubuntu: 'Ubuntu', sans-serif
+$Roboto: 'Roboto', sans-serif
+
+// colors
+$textColor: #282828
+$altColor: #CC0000
+$labelColor: #3DC47E
+$btnColor: #28A745
+
+///////////////////////////////////////////////////////////////////////////
+    
+// —— basics ——
+
+//page
+
+*
+    padding: 0
+    margin: 0
+    border: 0
+
+*, *:before, *:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+a:focus, a:active
+    outline: none
+
+nav, footer, header, aside
+    display: block
+
+html, body
+    height: 100%
+    width: 100%
+    font-size: 100%
+    line-height: 1
+    font-size: 14px
+    -ms-text-size-adjust: 100%
+    -moz-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+input, button, textarea
+    font-family: inherit
+
+input::-ms-clear
+    display: none
+
+button
+    cursor: pointer
+
+button::-moz-focus-inner
+    padding: 0
+    border: 0
+
+a, a:visited
+    text-decoration: none
+
+a:hover
+    text-decoration: none
+
+ul li
+    list-style: none
+
+img
+    vertical-align: top
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— site ——
+
+// header
+body
+    font-family: $Roboto
+    color: $textColor
+
+.burger-menu 
+    &__link
+        display: none
+        @media screen and (max-width: 655px)    
+            z-index: 9
+            display: block
+            width: 50px
+            height: 33px
+            position: fixed
+            right: 20px
+            top: 20px
+            transition: all 0.3s
+            float: right
+            &:hover 
+                opacity: .9
+        
+            span, span:before, span:after 
+                display: block
+                height: 2px
+                width: 18px
+                background-color: #000
+                position: absolute
+                left: 50%
+                margin-left: -9px
+                top: 50%
+                margin-top: -1px
+            
+            span
+                &:before 
+                    transition: all 0.2s
+                    content: ''
+                    margin-top: -6px
+            
+                &:after 
+                    transition: all 0.2s
+                    content: ''
+                    margin-top: 4px
+
+            &_active span 
+                background-color: transparent
+                
+                &:before 
+                    transform: rotate(135deg)
+                    margin-top: 0
+                
+                &:after
+                    transform: rotate(-135deg)
+                    margin-top: 0
+
+    z-index: 1
+    background-color: #fff
+    position: fixed
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    left: -100vw
+    transition: all 0.5s
+
+    &_active 
+        left: 0
+
+    ul 
+        list-style: none
+        padding: 0
+        text-align: center
+        flex: 1 1 auto
+
+        li 
+            width: 100vw
+        
+        a 
+            display: block
+            width: 100%
+            line-height: 80px
+            color: $textColor
+            transition: all 0.3s
+            font-size: 2rem
+            &:hover 
+                text-decoration: none
+                background-color: #7e7e7e66
+    
+    &__btn
+        font-weight: 500
+        font-size: 14px
+        display: inline-block
+        border: 1px solid $btnColor
+        text-align: center
+        background-color: #fff
+        padding: 15px 20px 15px 20px
+        border-radius: 4px
+        margin-top: 10px
+
+.header
+    height: 70px
+    z-index: 997
+    @media screen and (max-width: 768px)
+        position: fixed
+        background-color: #fff
+        box-shadow: 0px 5px 20px #96969649
+        width: 100%
+
+    &__container
+        @media screen and (max-width: 767px)
+            max-width: 100% !important
+
+    &__nav
+        float: right
+        @media screen and (max-width: 991px)
+            float: none
+            margin-left: -70px
+        @media screen and (max-width: 767px)
+            margin-left: -130px
+        @media screen and (max-width: 655px)
+            display: none
+
+    &__btn
+        font-family: $Roboto
+        font-weight: 500
+        font-size: 14px
+        background-color: #fff
+        display: block
+        border: 1px solid $btnColor
+        text-align: center
+        padding: 15px 20px 15px 20px
+        border-radius: 4px
+        margin-top: 10px
+        transition: all 0.3s
+        @media screen and (max-width: 1200px)
+            padding: 10px 15px 10px 15px
+            font-size: 12px
+            margin-top: 16px
+        @media screen and (max-width: 991px)
+            font-size: 10px
+            padding: 8px 10px 8px 10px
+            margin-top: 20px
+        @media screen and (max-width: 767px)
+            margin-left: 30px
+        @media screen and (max-width: 655px)
+            display: none
+            
+.logo
+    &__image
+        margin-top: 19px
+        cursor: pointer
+        @media screen and (max-width: 767px)
+            margin-left: 30px
+
+    &__title
+        font-family: $Ubuntu
+        display: inline-block
+        position: absolute
+        font-size: 24px
+        color: $textColor
+        margin: 23px 0 0 7px
+        @media screen and (max-width: 767px)
+            display: none
+        @media screen and (max-width: 575px)
+            display: inline-block
+        &:hover
+            color: $textColor
+
+.list
+    margin-left: 160px
+    @media screen and (max-width: 698px)
+        margin-left: 130px
+
+.component
+    display: inline-block
+    font-weight: 700
+    font-size: 17px
+    margin: 26px 24px 0 0
+    @media screen and (max-width: 1200px)
+        margin-right: 14px
+        font-size: 14px
+    @media screen and (max-width: 991px)
+        font-size: 14px
+        margin-right: 8px
+        text-align: center
+    
+    &__link
+        color: $textColor
+        // transition: 1s all
+        &:hover
+            color: $textColor
+            text-decoration: underline
+
+// main
+.main
+    @media screen and (max-width: 1920px)
+        background: url("../img/main__bg.jpg") no-repeat right
+        background-size: 753px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 8% 0 8% 0
+    @media screen and (max-width: 1397px)
+        background-size: 652px
+    @media screen and (max-width: 1199px)
+        background-size: 552px
+    @media screen and (max-width: 991px)
+        background: none
+        padding: 8% 0 0 0
+    @media screen and (max-width: 768px)
+        text-align: center
+
+    &__row
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: left
+        @media screen and (max-width: 2560px)
+            background: url("../img/main__bg.jpg") no-repeat right
+            background-size: 752px auto
+            padding: 8% 0 8% 0
+        @media screen and (max-width: 1920px)
+            background: none
+            padding: 0
+        @media screen and (max-width: 768px)
+            align-items: center
+
+    &__title
+        font-size: 70px
+        font-weight: 700
+        color: $altColor
+        display: inline-block
+        @media screen and (max-width: 2560px)
+            width: 500px
+        @media screen and (max-width: 1920px)
+            width: 100%
+            margin: 0
+        @media screen and (max-width: 1690px)
+            width: 500px
+        @media screen and (max-width: 1200px)
+            font-size: 60px
+        @media screen and (max-width: 991px)
+            width: 100%
+        @media screen and (max-width: 768px)
+            margin-top: 100px
+        @media screen and (max-width: 576px)
+            margin-top: 60px
+        @media screen and (max-width: 432px)
+            width: 100%
+        @media screen and (max-width: 372px)
+            font-size: 52px
+            
+
+    &__title2
+        margin-top: 22px
+        font-weight: 700
+        font-size: 40px
+
+    &__text
+        display: block
+        width: 435px
+        margin-top: 46px
+        font-size: 18px
+        line-height: 27px
+        @media screen and (max-width: 991px)
+            width: 100%
+        @media screen and (max-width: 768px)
+            display: inline-block
+            width: 400px
+            text-align: center
+        @media screen and (max-width: 576px)
+            text-align: left
+            padding-left: 5px
+            padding-right: 5px
+        @media screen and (max-width: 432px)
+            width: 100%
+    
+::placeholder
+    @media screen and (max-width: 532px)
+        color: #fff
+
+.input
+    margin-top: 30px
+
+    &__field
+        width: 412px
+        height: 60px
+        padding: 0
+        padding-left: 16px
+        border-radius: 5px
+        border: 1px solid #CECECE
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05)
+        outline: none
+        color: #464646
+        margin: 0
+        transition: all 0.3s
+        vertical-align: middle
+        @media screen and (max-width: 768px)
+            width: 430px
+        @media screen and (max-width: 768px)
+            width: 330px
+        @media screen and (max-width: 432px)
+            width: 260px
+        @media screen and (max-width: 364px)
+            width: 200px
+        &:hover
+            border: 1px solid $textColor
+        
+        &::after
+            outline: none
+
+    &__btn
+        margin: 0
+        padding: 0
+        width: 224px
+        height: 60px
+        border-radius: 5px
+        background-color: $altColor
+        color: #fff
+        font-size: 16px
+        font-weight: 700
+        transition: 0.3s all
+        margin-left: 8px
+        vertical-align: middle
+        @media screen and (max-width: 768px)
+            width: 70px
+        &-text
+            display: inline
+            @media screen and (max-width: 768px)
+                display: none
+        
+    &__icon
+        margin-right: 4px
+
+// domains
+.domains
+    text-align: center
+
+    &__title
+        margin-top: 100px
+        font-weight: 700
+        font-size: 32px
+        @media screen and (max-width: 768px)
+            display: inline-block
+            width: 400px
+            text-align: center
+        @media screen and (max-width: 567px)
+            margin-top: 80px
+        @media screen and (max-width: 432px)
+            width: 100%
+
+    &__title2
+        margin-top: 8px
+        margin-bottom: 47px
+        font-weight: 400
+        font-size: 22px
+        @media screen and (max-width: 767px)
+            font-size: 18px
+            display: inline-block
+            width: 400px
+        @media screen and (max-width: 576px)
+            text-align: left
+        @media screen and (max-width: 432px)
+            width: 100%
+
+    &__name
+        margin: 0
+        border: 1px solid #D0D0D0
+        width: 160px
+        height: 140px
+        border-radius: 10px
+        margin-bottom: 30px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05)
+        margin-left: 20px
+        cursor: pointer
+        transition: all 0.3s
+        @media screen and (max-width: 1400px)
+            width: 130px
+            height: 120px
+        @media screen and (max-width: 1200px)
+            width: 110px
+            height: 90px
+        @media screen and (max-width: 767px)
+            width: 90px
+            height: 80px
+        @media screen and (max-width: 576px)
+            margin-left: 0
+            
+        &:hover
+            margin-top: -5px
+            box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.349)
+            @media screen and (max-width: 567px)
+                margin-top: 0
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05)
+    
+    &__row
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
+    &__columns
+        margin: 0
+        @media screen and (max-width: 576px)
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            text-align: center
+    
+    &__link
+        font-size: 16px
+        font-weight: 500
+
+.name
+    &__label
+        display: inline-block
+        text-align: center
+        width: 67px
+        height: 20px
+        background-color: $labelColor
+        color: #fff
+        border-radius: 3px
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 10px
+        padding-top: 5px
+        position: absolute
+        transform: translateX(-50%)
+        margin-top: 12px
+        z-index: -999
+        @media screen and (max-width: 1200px)
+            font-size: 8px
+            padding-top: 7px
+            margin-top: 2px
+        @media screen and (max-width: 767px)
+            width: 50px
+        &_es
+            width: 77px
+
+    &__title
+        margin-top: 38px
+        font-size: 32px
+        font-weight: 700
+        @media screen and (max-width: 1400px)
+            font-size: 22px
+        @media screen and (max-width: 1200px)
+            font-size: 18px
+            margin-top: 20px
+        @media screen and (max-width: 767px)
+            font-size: 16px
+
+    &__price
+        margin: 0
+        margin-top: -4px
+        font-size: 22px
+        font-weight: 400
+        @media screen and (max-width: 1400px)
+            font-size: 16px
+        @media screen and (max-width: 767px)
+            font-size: 13px
+
+// about
+.about
+    text-align: center
+    @media screen and (max-width: 768px)
+        margin-top: 0
+    @media screen and (max-width: 576px)
+        padding-left: 5px
+        padding-right: 5px
+
+    &__img
+        margin-top: 170px
+        width: 60px
+        display: inline-block
+        text-align: center
+        @media screen and (max-width: 768px)
+            margin-top: 100px
+    
+    &__title
+        font-size: 52px
+        font-weight: 300
+        color: $altColor
+        margin-top: 23px
+        @media screen and (max-width: 1150px)
+            margin-top: 23px
+        @media screen and (max-width: 576px)
+            font-size: 40px
+
+    &__title2
+        text-align: left
+        @media screen and (max-width: 1200px)
+            text-align: center
+    
+    &__text
+        margin-top: 7px
+        display: inline-block
+        width: 540px
+        text-align: center
+        font-size: 18px
+        line-height: 27px
+        font-weight: 400
+        @media screen and (max-width: 576px)
+            width: 100%
+            text-align: left
+
+    &__text2
+        width: 540px
+        font-size: 18px
+        line-height: 27px
+        font-weight: 400
+        text-align: left
+        @media screen and (max-width: 1200px)
+            display: inline-block
+            text-align: center
+            text-align: left
+            margin-top: 15px
+        @media screen and (max-width: 576px)
+            width: 100%
+
+    &__info
+        text-align: center
+        margin-top: 100px
+        @media screen and (max-width: 576px)
+            width: 100%
+            margin-top: 30px
+
+// features
+.features
+    background-color: #F8F8F8
+    margin-top: 100px
+    padding: 80px 0 80px 0
+    text-align: center
+    margin-bottom: 70px
+    @media screen and (max-width: 576px)
+        margin-top: 30px
+
+    &__title
+        font-weight: 700
+        letter-spacing: 5px
+        font-size: 18px
+        color: $altColor
+        text-transform: uppercase
+        
+
+    &__title2
+        font-weight: 300
+        font-size: 36px
+        margin-top: 20px
+        @media screen and (max-width: 576px)
+            line-height: 48px
+    
+    &__row
+        margin-top: 80px
+
+.feature
+    @media screen and (max-width: 767px)
+        margin-top: 100px
+    @media screen and (max-width: 425px)
+        margin-top: 15px
+    &__title
+        margin-top: 20px
+        font-weight: 500
+        font-size: 18px
+    &__description
+        margin-top: 5px
+        font-weight: 400
+        line-height: 28px
+
+//support
+.support
+    @media screen and (max-width: 1920px)
+        background: url("../img/support__img.jpg") no-repeat right
+        background-size: 800px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 14% 0 14% 0
+    @media screen and (max-width: 1480px)
+        background-size: 750px
+    @media screen and (max-width: 1360px)
+        background-size: 650px
+    @media screen and (max-width: 1280px)
+        background-size: 650px
+    @media screen and (max-width: 1160px)
+        background-size: 550px
+    @media screen and (max-width: 991px)
+        background: none
+        padding: 5% 0 15% 0
+    @media screen and (max-width: 576px)
+        padding-left: 5px
+        padding-right: 5px
+
+    &__row
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: left
+        @media screen and (max-width: 2560px)
+            background: url("../img/support__img.jpg") no-repeat right
+            background-size: 800px auto
+            padding: 16% 0 16% 0
+        @media screen and (max-width: 1920px)
+            background: none
+            padding: 0
+        @media screen and (max-width: 991px)
+            align-items: center
+
+    &__title
+        font-weight: 700
+        font-size: 22px
+        @media screen and (max-width: 370px)
+            margin-top: 20px
+    &__text
+        font-weight: 400
+        line-height: 27px
+        font-size: 18px
+        display: inline-block
+        width: 420px
+        @media screen and (max-width: 1280px)
+            width: 400px
+            margin-top: 20px
+        @media screen and (max-width: 991px)
+            text-align: left
+        @media screen and (max-width: 576px)
+            width: 100%
+
+// reviews
+.reviews
+    margin-top: 85px
+    text-align: center
+    @media screen and (max-width: 1150px)
+        margin-top: 0px
+
+    &__title
+        display: inline-block
+        width: 445px
+        font-size: 36px
+        font-weight: 300
+        color: $altColor
+        margin-top: 23px
+        line-height: 46px
+        @media screen and (max-width: 510px)
+            width: 100%
+
+    &__text
+        margin-top: 20px
+        display: inline-block
+        width: 445px
+        font-size: 18px
+        line-height: 27px
+        @media screen and (max-width: 510px)
+            width: 100%
+
+.carousel
+    text-align: left
+    margin-top: 36px
+    overflow: hidden
+    @media screen and (max-width: 768px)
+        display: none !important
+
+.items
+    width: 445px
+    height: 308px
+    padding: 50px 30px 40px 30px
+    border: 1px solid #E8E8E8
+    box-shadow: 0px 20px 50px rgba(103, 103, 103, 0.05)
+    border-radius: 20px
+
+    &__rating
+        width: 145px
+        height: 20px
+    
+    &__review
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        margin-top: 35px
+
+    &__name
+        margin-top: 38px
+        font-weight: 700
+        font-size: 16px
+    
+// contacts
+.info
+    display: inline-block
+    vertical-align: middle
+    margin-top: 36px
+
+.contacts
+    margin-top: 137px
+    height: 280px
+    background-color: #171718
+    color: #fff
+    padding-bottom: 45px
+    @media screen and (max-width: 991px)
+        height: 380px
+    @media screen and (max-width: 576px)
+        margin-top: 30px
+    @media screen and (max-width: 532px)
+        height: 450px
+    @media screen and (max-width: 370px)
+        height: 500px
+    
+    &__container
+        background-color: #1E1E20
+        @media screen and (max-width: 991px)
+            height: 180px
+        @media screen and (max-width: 768px)
+            height: 240px
+
+    &__info
+        height: 120px
+
+    &__title
+        margin-top: 40px
+        font-weight: 500
+        font-size: 22px
+        @media screen and (max-width: 768px)
+            font-size: 18px
+            display: inline-block
+            width: 100%
+            text-align: center
+
+    &__number
+        font-weight: 700
+        font-size: 32px
+        margin-left: 32px
+        @media screen and (max-width: 1200px)
+            font-size: 22px
+            margin-top: 40px
+        @media screen and (max-width: 768px)
+            font-size: 18px
+            margin: 0
+            margin-top: 10px
+            font-size: 20px
+            display: inline-block
+            width: 100%
+            text-align: center
+
+    &__links
+        display: inline-block
+        position: absolute
+        transform: translateX(50%)
+        margin-top: -3px
+        z-index: 0
+        @media screen and (max-width: 1200px)
+            transform: translateX(20%)
+            margin-top: 0px
+        @media screen and (max-width: 991px)
+            display: block
+            text-align: center
+            transform: translateX(0%)
+        @media screen and (max-width: 768px)
+            width: 100%
+            position: relative
+            display: inline-block
+            text-align: center
+            margin-left: 5px
+
+        
+    &__link
+        margin-right: 16px
+
+    &__linkblock
+        margin-top: 30px
+        margin-bottom: -5px
+        @media screen and (max-width: 991px)
+            margin-top: 20px
+    
+    &__linkblock2
+        margin-bottom: -5px
+
+    &__linkwrap
+        display: inline-block
+
+
+    &__toslinks
+        color: #fff
+        margin-right: 16px
+        margin-top: 10px
+        font-weight: 500
+        font-size: 14px
+        &:hover
+            color: #fff
+        
+.btmlinks
+    color: #fff
+    text-transform: uppercase
+    margin-right: 30px
+    font-weight: 900
+    font-size: 13px
+    &:hover
+        color: #fff
+
+    &__links
+        color: #868686
+        transition: 0.3s all
+        margin-right: 20px
+        font-weight: 500
+        font-size: 14px
+        &:hover
+            color: #fff
+    
+// footer
+.footer
+    text-align: center
+    padding-bottom: 40px
+
+    &__links
+        display: inline-block
+        margin-top: 35px
+        vertical-align: middle
+        margin-right: 30px
+
+    &__text
+        font-weight: 500
+        margin-top: 20px
+        line-height: 27px
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— search results ——
+
+// search
+.search
+    text-align: center
+
+    &__field
+        margin-top: 64px
+        width: 570px
+        height: 60px
+        border-radius: 4px
+        border: 1px solid #D8DCE6
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        padding: 18px 24px 18px 24px
+        font-size: 20px
+        font-weight: 500
+        box-sizing: border-box
+        outline: none
+        vertical-align: middle
+        transition: all 0.3s
+        &:hover
+            border: 1px solid #000
+        &::after
+            outline: none
+
+    &__btn
+        width: 170px
+        height: 60px
+        border: 1px $btnColor solid
+        border-radius: 4px
+        background-color: #fff
+        text-transform: uppercase
+        font-size: 14px
+        letter-spacing: 1.39px
+        font-weight: 700
+        margin-left: 24px
+        box-sizing: border-box
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        vertical-align: middle
+        margin-top: 63px
+
+    &__icon
+        margin-right: 4px
+
+// double range slider
+.middle 
+	position: relative
+	width: 300px
+    margin-top: 300px
+
+.slider 
+	position: relative
+	z-index: 1
+	height: 8px
+	margin: 20px 0px 0px 10px
+
+.slider > .track 
+	position: absolute
+	z-index: 1
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	border-radius: 5px
+	background: rgba(137, 144, 165, 0.25)
+
+.slider > .range 
+	position: absolute
+	z-index: 2
+	left: 0%
+	right: 25%
+	top: 0
+	bottom: 0
+	border-radius: 5px
+	background-color: #28A745
+
+.slider > .thumb 
+	position: absolute
+	z-index: 3
+	width: 16px
+	height: 16px
+	background-color: #fff
+	border-radius: 50%
+
+.thumb
+    border: 1px solid #28A745
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+
+.slider > .thumb.left 
+	left: 0%
+	transform: translate(-10px, -4px)
+
+.slider > .thumb.right 
+	right: 25%
+	transform: translate(10px, -4px)
+
+input[type=range]
+	position: absolute
+	pointer-events: none
+	-webkit-appearance: none
+	z-index: 2
+	height: 10px
+	width: 100%
+	opacity: 0
+
+input[type=range]::-webkit-slider-thumb 
+	pointer-events: all
+	width: 30px
+	height: 30px
+	border-radius: 0
+	border: 0 none
+	background-color: red
+	-webkit-appearance: none
+    appearance: none
+
+input[type=range]::-moz-range-thumb 
+	pointer-events: all
+	width: 30px
+	height: 30px
+	border-radius: 0
+	border: 0 none
+	background-color: red
+	-moz-appearance: none
+    appearance: none
+
+input[type=range]::-ms-thumb 
+    pointer-events: all
+    width: 30px
+    height: 30px
+    border-radius: 0
+    border: 0 none
+    background: red
+    -ms-appearance: none
+    appearance: none
+
+.search-results
+    margin-top: 64px
+    
+.filters
+    width: 350px
+    height: 1085px
+    border: 1px #efefef solid
+    border-radius: 4px
+    padding: 32px 24px 32px 24px
+
+    &__description
+        font-weight: 500
+        font-size: 12px
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: #8990A5
+    
+    &__select
+        margin-top: -5px
+        width: 302px
+        height: 40px
+        border-radius: 3px
+        border: 1px solid #d8dce6
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        outline: none
+        padding: 8px 16px 8px 16px
+        font-size: 16px
+        background: url("../img/seach results/search-results__arrow.svg") no-repeat right
+        background-position-x: 95%
+        -moz-appearance: none
+        -webkit-appearance: none
+        appearance: none
+        &::after
+            outline: none
+
+        &_1
+            width: 75px
+            height: 40px
+            background: url("../img/seach results/search-results__arrows.svg") no-repeat right
+            background-position-x: 80%
+        
+        &_2
+            width: 118px
+            height: 40px
+            background: url("../img/seach results/search-results__arrows.svg") no-repeat right
+            background-position-x: 88%
+
+        &_results
+            margin-left: -50px
+            padding-left: 67px
+            width: 250px
+
+    &__label
+        display: inline-block
+        float: left
+        transform: translateY(50%)
+        transform: translateX(30%)
+        margin-top: 7px
+        font-weight: 400
+        font-size: 14px
+        color: #9EA0A5
+        
+    &__second-text
+        font-size: 14px
+        font-weight: 400px
+        color: #9EA0A5
+        display: block
+        width: 10px
+
+    &__to
+        display: inline
+        font-weight: 400
+        font-size: 16px
+        margin: 0 8px 0 8px
+
+    &__slider
+        margin-top: 10px
+
+    &__divider
+        background-color: #EAEDF3
+        height: 1px
+        width: 300px
+        margin-top: 24px
+
+    &__btn
+        width: 100px
+        height: 38px
+        background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%)
+        border: 1px #D8DCE6 solid
+        border-radius: 4px
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+
+.results
+    &__title
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 16px
+        margin-top: 8px
+        margin-left: 15px
+
+    &__line
+        width: 100%
+        height: 2px
+        background-color: #E5EDF8
+        &_main
+            width: 165px
+            height: 2px
+            background-color: #0D66D0
+            margin-top: -2px
+
+    &__display
+        margin-top: 32px
+        display: inline-block
+
+    &__share
+        display: inline-block
+        float: right
+        margin-top: 30px
+        color: $textColor
+        font-size: 12px
+        &:hover
+            color: $textColor
+        &-icon
+            margin-right: 10px
+
+.table
+    margin-top: 5px
+    width: 100%
+    border-collapse: separate
+    border-spacing: 0 17px
+
+    &__th
+        text-transform: uppercase
+        border: none
+        font-weight: 500
+        font-size: 11px
+        color: #8990A5
+        &_dn
+            width: 80%
+        &_price
+            width: 10%
+        &_btn
+            width: 10%
+
+    &__td
+        border: none
+        height: 70px
+        vertical-align: middle
+        border-radius: 4px
+        &:nth-child(1)
+            border: 1px solid #efefef
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            border-right: none
+            font-weight: 500
+            font-size: 16px
+            padding-left: 24px
+        &:nth-child(2)
+            border: 1px solid #efefef
+            border-radius: 0
+            border-right: none
+            border-left: none
+            font-weight: 700
+            font-size: 18px
+        &:nth-child(3)
+            border: 1px solid #efefef
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+            border-left: none
+            padding-right: 15px
+
+    &__btn
+        width: 102px
+        height: 38px
+        display: inline-block
+        float: right
+        background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%)
+        border: 1px solid #D8DCE6
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        border-radius: 4px
+
+.pages
+    display: inline-block
+    float: right
+    width: 260px
+    height: 38px
+    border-radius: 4px
+    border: 1px solid #D8DCE6
+    padding-left: 2px
+    transform: translateY(-7%)
+    &__links
+        display: inline-block
+        margin-top: -16px
+        width: 32px
+        height: 32px
+        color: $textColor
+        vertical-align: middle
+        text-align: center
+        padding-top: 9px
+        &:hover
+            color: $textColor
+            background-color: #EAEDF3
+            border-radius: 4px
+        &_arrows
+            padding-top: 6px
+
+        &_5
+            background-color: #0D66D0 !important
+            border-radius: 4px
+            color: #fff !important
+
+    &__divider
+        display: inline-block
+        width: 1px
+        height: 30px
+        border-radius: 0.5px
+        border: 1px solid #EAEDF3
+        transform: translateY(10%)
+            
+// payment methods
+.payment-methods
+    text-align: center
+    text-transform: capitalize
+
+    &__title
+        margin-top: 100px
+        font-weight: 500
+        font-size: 18px
+
+.method
+    display: inline-block
+    margin-right: 110px
+    margin-top: 40px
+    &:last-child
+        margin-right: 0
+
+    &__title
+        margin-top: 16px
+        font-weight: 400
+        font-size: 14px
+        color: #8990A5
+
+.search_results
+    &__contacts
+        margin-top: 40px
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— transfers ——
+
+// main
+.dt-main
+    margin-top: 90px
+
+    &__title
+        font-size: 32px
+        font-weight: 700
+        color: $altColor
+
+    &__description
+        font-weight: 400
+        font-size: 28px
+        line-height: 42px
+        display: block
+        width: 440px
+        margin-top: 20px
+
+    &__text
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        display: block
+        width: 445px
+        margin-top: 24px
+
+    //textarea placeholder SAFARI SURRORT
+
+    &__holder 
+        position: relative
+        overflow: hidden
+
+    &__placeholder 
+        pointer-events: none
+        user-select: none
+        position: absolute
+        color: silver
+        padding: 20px 24px 18px 28px
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+
+    .hidden 
+        display: none
+
+    textarea 
+        width: 700px
+        height: 288px
+        border-radius: 4px
+        border: 1px solid #D8DCE6
+        box-sizing: border-box
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        outline: none
+        resize: none
+        padding: 18px 24px 18px 24px
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        -moz-appearance: none
+        -webkit-appearance: none
+        appearance: none
+        transition: 0.3s all
+        &::after
+            outline: none
+        &:hover
+            border: 1px solid #000
+        
+    &__btn
+        float: right
+        transform: translateX(-33%)
+        padding: 18px 43px 18px 43px
+        background-color: $btnColor
+        color: #fff
+        border-radius: 4px
+        border: 1px $btnColor solid
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+
+// explanation
+.explanation
+    text-align: center
+
+    &__title
+        margin-top: 115px
+        font-weight: 700
+        font-size: 32px
+
+    &__description
+        text-transform: capitalize
+        font-weight: 400
+        font-size: 22px
+        margin-top: 15px
+
+.t-features
+    margin-top: 42px
+
+    &__title
+        font-weight: 500
+        font-size: 18px
+        margin-top: 18px
+
+    &__text
+        margin-top: 8px
+        font-size: 16px
+        line-height: 28px
+        font-weight: 40
+        display: inline-block
+        width: 350px
+
+// owning
+.owning
+    margin-top: 100px
+    margin-bottom: 80px
+    &__text
+        margin-top: 15px
+    &__link
+        display: inline-block
+        margin-top: 25px
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— transfers step 2 ——
+
+// main
+.ts2-main
+    margin-top: 85px
+
+    &__title
+        font-weight: 700
+        font-size: 32px
+        text-align: center
+
+    &__text
+        font-weight: 400
+        font-size: 22px
+        margin-top: 18px
+        text-align: center
+
+    &__row
+        margin-left: 70px
+        
+.basket
+    &__title
+        font-weight: 700
+        font-size: 14px
+        text-transform: uppercase
+        color: #8990A5
+        display: inline-block
+        margin-top: 32px
+        &_dn
+            margin-left: 20px
+            margin-right: 344px
+        &_tld
+            margin-right: 134px
+        
+    &__items
+        width: 730px
+        height: 73px
+        border-radius: 4px
+        border: 1px #efefef solid
+        padding: 26px 24px 24px 24px
+        margin-bottom: 16px
+        &:last-child
+            margin-bottom: 100px
+
+    &__name
+        display: inline-block
+        font-weight: 500
+        font-size: 17px
+
+    &__tld
+        display: inline-block
+        float: right
+        transform: translateX(-840%)
+        margin-top: 2px
+
+    &__price
+        display: inline-block
+        float: right
+        margin-top: -3px
+
+    &__cross
+        display: inline-block
+        float: right
+        transform: translateX(880%)
+        color: #9EA0A5
+        font-size: 20px
+        cursor: pointer
+
+.order
+    margin-top: 58px
+    width: 350px
+    height: 310px
+    border-radius: 4px
+    border: 1px solid #eaedf3
+    padding: 33px 24px 27px 24px
+    margin-left: 30px
+
+    &__summary
+        font-weight: 500
+        font-size: 18px
+        padding-left: 6px
+
+    &__title
+        font-weight: 500
+        font-size: 12px
+        text-transform: uppercase
+        color: #8990A5
+        display: inline-block
+        margin-top: 32px
+        &_price
+            float: right
+
+    &__name
+        font-weight: 400
+        font-size: 14px
+        display: inline-block
+        margin-right: 75px
+        margin-top: 20px
+
+    &__price
+        display: inline-block
+        width: 50px
+        &_final
+            font-weight: 700
+            font-size: 16px
+            float: right
+            margin-top: 18px
+
+    &__cross
+        display: inline-block
+        margin-left: -10px
+        font-size: 18px
+        font-weight: 300
+        transform: translateY(2%)
+        color: #9EA0A5
+        cursor: pointer
+
+    &__btn
+        text-transform: uppercase
+        letter-spacing: 1.40px
+        font-weight: 500
+        color: #fff
+        background-color: $btnColor
+        border: 1px solid $btnColor
+        border-radius: 4px
+        padding: 18px 43px 18px 43px
+        float: right
+        margin-top: 30px
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— tld landing page ——
+
+// main
+.tld-main
+    text-align: center
+
+    &__title
+        font-size: 42px
+        color: $altColor
+        font-weight: 700
+        margin-top: 75px
+
+    &__text
+        font-weight: 700
+        font-size: 22px
+        margin-top: 25px
+
+    &__input
+        display: inline-block
+        margin-top: 32px
+
+    &__field
+        width: 412px
+        height: 60px
+        font-weight: 400
+        font-size: 16px
+        padding: 22px 16px 22px 16px
+        border: 1px solid #CECECE
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05)
+        border-radius: 5px
+        outline: none
+        vertical-align: middle
+        &::after
+            outline: none
+        &:hover
+            border: 1px solid #000
+
+    &__icon
+        margin-right: 4px
+
+    &__btn
+        width: 240px
+        height: 60px
+        margin-left: 10px
+        border-radius: 5
+        border: 1px solid $altColor
+        border-radius: 4px
+        background-color: $altColor
+        color: #fff
+        vertical-align: middle
+
+.tld-search
+    &__title
+        font-weight: 700
+        font-size: 14px
+        text-transform: uppercase
+        color: #8990A5
+        display: inline-block
+        margin-top: 70px
+        margin-bottom: 12px
+        &_tld
+            margin-left: 30px
+            margin-right: 285px
+        &_reg
+            margin-right: 125px
+
+    &__items
+        width: 830px
+        height: 73px
+        border-radius: 4px
+        border: 1px #efefef solid
+        padding: 26px 24px 24px 24px
+        margin-bottom: 16px
+
+    &__name
+        display: inline-block
+        font-weight: 500
+        font-size: 17px
+
+    &__registration
+        display: inline-block
+        float: right
+        transform: translateX(-370%)
+        margin-top: 2px
+        font-weight: 500
+        font-size: 16px
+
+    &__renew
+        display: inline-block
+        float: right
+        margin-top: -3px
+        transform: translateX(-115%)
+        font-weight: 500
+        font-size: 16px
+        
+
+    &__btn
+        width: 102px
+        height: 38px
+        display: inline-block
+        float: right
+        background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%)
+        border: 1px solid #D8DCE6
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08)
+        border-radius: 4px
+        margin-top: -10px
+        margin-right: -180px
+    
+    &__label
+        margin-left: 0
+
+    &__pages
+        transform: translateX(-11%)
+        margin-bottom: 25px
+
+    &__popular
+        font-weight: 700
+        margin-top: 100px
+        font-size: 16px
+        margin-bottom: 20px
+
+    &__pop-domains
+        padding-top: 20px
+
+    &__domains
+        display: inline-block
+        margin-left: 0
+        margin-right: 30px
+        text-align: center
+        &:hover
+            margin-top: 0
+
+///////////////////////////////////////////////////////////////////////////
+
+// —— tld ——
+
+// main
+.com-main
+    background: url("../img/tld/main__img.jpg") no-repeat right
+    background-size: 752px 623px
+
+    &__title
+        margin-top: 70px
+
+    &__title2
+        margin-top: 0px
+
+    &__title3
+        font-weight: 400
+        font-size: 32px
+
+    &__text
+        margin-top: 32px
+        font-weight: 400
+        font-size: 18px
+        color: #464646
+
+    &__price
+        color: $altColor
+        font-weight: 700
+        font-size: 42px
+
+    &__btn
+        width: 266px
+
+    &__link
+        font-weight: 500
+        font-size: 16px
+        color: #0088CC
+        display: block
+        margin-top: 22px
+        margin-bottom: 8px
+        &:last-child
+            margin: 0
+
+// .com domain names
+.com-domain
+    text-align: center
+    margin-top: 120px
+
+    &__title
+        font-weight: 700
+        font-size: 32px
+
+    &__text
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        display: inline-block
+        width: 690px
+        margin-top: 20px
+
+// explanation
+.com-explanation
+    text-align: center
+    margin-top: 77px
+
+    &__title
+        font-weight: 700
+        font-size: 32px
+        margin-bottom: 70px
+
+.com-feature
+    &__title
+        font-weight: 500
+        font-size: 18px
+        margin: 20px 0px 20px 0px
+
+    &__text
+        font-weight: 400
+        font-size: 16px
+        line-height: 28px
+        display: inline-block
+        width: 350px
+        height: 58px
+        margin-bottom: 82px

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfers</title>
+    <link rel="icon" href="img/logo.svg">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="row">
+
+                <!-- logo -->
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                    <div class="header__logo logo">
+                        <img src="img/logo.svg" alt="logo" class="logo__image"  onclick="comingSoon();">
+                        <a href="#" class="logo__title"  onclick="comingSoon();">All.ca</a>
+                    </div>
+                </div>
+
+                <!-- navigation -->
+                <div class="col-lg-9 col-md-9 col-sm-8 d-none d-sm-block">
+                    <nav class="header__nav nav">
+                        <ul class="nav__list list">
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Home</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">.CA Registration</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Transfers</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">TLDs</a>
+                                </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Support</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">About</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- button -->
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 d-none d-sm-block">
+                    <button class="header__btn" onclick="comingSoon();">Sign In / Register</button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- dt-main -->
+    <section class="dt-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1 class="dt-main__title">Domain Transfers</h1>
+                    <h2 class="dt-main__description">It is time to move your domains to higher ground!</h2>
+                    <p class="dt-main__text">To start your transfer, simply enter the list of domains.
+                    <br><br>
+                    If you already have authorization codes from your old registrar, please include them. Otherwise, these can be added later. For help, contact our free transfer concierge. </p>
+                </div>
+                <div class="col-lg-7">
+                    <!-- <textarea name="textarea" id="" cols="30" rows="10" class="dt-main__textarea" placeholder="Paste your domains here, each on a separate line.\n\nIf you have an authorization code, you can optionally include that as well.\nExampleDomain.com AuthCode\nExampleDomain2.net\nExampleDomain3.net AuthCode"></textarea> -->
+
+                    <!-- textarea placeholder SAFARI SURRORT -->
+                    <div class="dt-main__holder">
+                        <div class="dt-main__placeholder">
+                            Paste your domains here, each on a separate line.
+                            <br><br>
+                            If you have an authorization code, you can optionally include that as well.
+                            <br>
+                            ExampleDomain.com AuthCode
+                            <br>
+                            ExampleDomain2.net
+                            <br>
+                            ExampleDomain3.net AuthCode
+                        </div>
+                        <textarea required="true" rows="5"></textarea>
+                      </div>
+
+                    <br>
+                    <button class="dt-main__btn">Next Step</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- explanation -->
+    <section class="explanation">
+        <div class="container">
+            <h1 class="explanation__title">Why Transfer your Domains to All.Ca?</h1>
+            <h4 class="explanation__description">A Platform That Helps You Build Your Business</h4>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="explanation__features t-features">
+                        <img src="img/seach results/t-features.svg" alt="" class="t-features__img">
+                        <p class="t-features__title">Powerful Domain Management</p>
+                        <p class="t-features__text">Our tools for managing domains are among the most preferred in the industry. You can even manage your non-All.Ca domains for free and transfer them later.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="explanation__features t-features">
+                        <img src="img/seach results/t-features.svg" alt="" class="t-features__img">
+                        <p class="t-features__title">Legendary Support </p>
+                        <p class="t-features__text">At All.CA we have long prided ourselves on providing great support. Your problem is our problem.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="explanation__features t-features">
+                        <img src="img/seach results/t-features.svg" alt="" class="t-features__img">
+                        <p class="t-features__title">Competitive Pricing </p>
+                        <p class="t-features__text">All.CA is a full-service, all-inclusive registrar. We are always looking for more ways to provide great value to our customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- owning -->
+    <section class="support owning">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5">
+                    <h4 class="support__title">Own Your Domains Forever</h4>
+                    <p class="support__text owning__text">Tired of annual renewals? Ever worry that you might have forgotten to renew an important domain? Save time, save money and skip the stress by registering your domains at All.Ca Forever.</p>
+                    <a href="#" onclick="comingSoon();" class="domains__link owning__link">Contact Us For More Information <i class="fa fa-angle-right"></i></a>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contacts -->
+    <section class="contacts search_results__contacts">
+        <div class="container-fluid contacts__container">
+            <div class="container">
+                <div class="contacts__info">
+                    <h3 class="info contacts__title">Legendary Customer Support</h3>
+                    <h1 class="info contacts__number">(888) 894-9026</h1>
+                    <h1 class="info contacts__number">(425) 366-8810</h1>
+                    <div class="contacts__links">
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/Facebook.svg" alt="Facebook" class="contacts__icon">
+                        </a>
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/Twitter.svg" alt="Twitter" class="contacts__icon">
+                        </a>
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/LinkedIN.svg" alt="LinkedIN" class="contacts__icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contacts__linkblock">
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="contacts__btmlinks btmlinks">My Domains</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Manage My Domains</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Domain Registration</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">WHOIS</a>
+                </p>
+            </div>
+            <br/>
+
+            <div class="contacts__linkblock2">
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="contacts__btmlinks btmlinks">Transfers</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Transfer Into Portfolio</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Transfer To Another Registrar</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Get Transfer Status</a>
+                </p>
+            </div>
+            <br/>
+
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Universal TOS</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Refund Policy</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Registrant Rights</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Registration Agreement</a>
+            </p>
+            <p class="contacts__linkwrap"><a href="#" onclick="comingSoon();" class="contacts__toslinks">Privacy Policy</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- <div class="row"> -->
+                <a href="#" class="footer__links">
+                    <img src="img/footer__1.svg" alt="" class="footer__img" onclick="comingSoon();">
+                </a>
+                <a href="#" class="footer__links">
+                    <img src="img/footer__2.svg" alt="" class="footer__img" onclick="comingSoon();">
+                </a>
+                <a href="#" class="footer__links">
+                    <img src="img/footer__3.svg" alt="" class="footer__img" onclick="comingSoon();">
+                </a>
+                <p class="footer__text">Epik ® is a registered trademark of Epik Inc. Copyright © 2020 by Epik Inc. All rights reserved.<br/>WHOIS Privacy services provided by Anonymize.com</p>
+            <!-- </div> -->
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/placeholder.js"></script>
+</body>
+</html>

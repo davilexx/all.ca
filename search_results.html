@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="icon" href="img/logo.svg">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="row">
+
+                <!-- logo -->
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+                    <div class="header__logo logo">
+                        <img src="img/logo.svg" alt="logo" class="logo__image"  onclick="comingSoon();">
+                        <a href="#" class="logo__title"  onclick="comingSoon();">All.ca</a>
+                    </div>
+                </div>
+
+                <!-- navigation -->
+                <div class="col-lg-9 col-md-9 col-sm-8 d-none d-sm-block">
+                    <nav class="header__nav nav">
+                        <ul class="nav__list list">
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Home</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">.CA Registration</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Transfers</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">TLDs</a>
+                                </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">Support</a>
+                            </li>
+                            <li class="list__item component">
+                                <a onclick="comingSoon();" href="#" class="component__link">About</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- button -->
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 d-none d-sm-block">
+                    <button class="header__btn" onclick="comingSoon();">Sign In / Register</button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- search bar -->
+    <section class="search">
+        <div class="container">
+            <div class="search__input">
+                <input type="text" class="search__field" placeholder="Start here by typing a domain name or a keyword" value="Epik Design">
+                <button class="search__btn" onclick="comingSoon();"><i class="fa fa-search search__icon"></i>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- filters & search results -->
+    <section class="search-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="search-results__filters filters">
+
+                        <!-- domain categories -->
+                        <p class="filters__description">Domain Categories</p>
+                        <select class="filters__select" name="category" id="">
+                            <option class="filters__option" value="All Categories">All Categories</option>
+                        </select>
+                        <br><br><br>
+
+                        <!-- added on -->
+                        <p class="filters__description">Added On</p>
+                        <select class="filters__select" name="added" id="">
+                            <option class="filters__option" value="In the last 7 days">In the last 7 days</option>
+                        </select>
+                        <br><br><br>
+
+                        <!-- price -->
+                        <p class="filters__description">Price</p>
+                        <select class="filters__select filters__select_1" name="" id="">
+                            <option class="filters__option" value="">$1</option>
+                        </select>
+                        <p class="filters__to">to</p>
+                        <select class="filters__select filters__select_2" name="" id="">
+                            <option class="filters__option" value="">$10,000+</option>
+                        </select>
+                        <!-- <img src="img/seach results/search-results__slider.png" alt="" class="filters__slider"> -->
+
+                        <div class="middle">
+                            <div class="multi-range-slider">
+                                <input type="range" id="input-left" min="0" max="100" value="0">
+                                <input type="range" id="input-right" min="0" max="100" value="75">
+                        
+                                <div class="slider">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    <div class="thumb left"></div>
+                                    <div class="thumb right"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filters__divider"></div>
+                        <br><br><br>
+                        
+                        <!-- number of characters -->
+                        <p class="filters__description">Number of Characters</p>
+                        <select class="filters__select filters__select_1" name="" id="">
+                            <option class="filters__option" value="">1</option>
+                        </select>
+                        <p class="filters__to">to</p>
+                        <select class="filters__select filters__select_1" name="" id="">
+                            <option class="filters__option" value="">253</option>
+                        </select>
+                        <!-- <img src="img/seach results/search-results__slider.png" alt="" class="filters__slider"> -->
+
+                        <div class="middle">
+                            <div class="multi-range-slider">
+                                <input type="range" id="input-left" min="0" max="100" value="0">
+                                <input type="range" id="input-right" min="0" max="100" value="75">
+                        
+                                <div class="slider">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    <div class="thumb left"></div>
+                                    <div class="thumb right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+
+                        <!-- number of words -->
+                        <p class="filters__description">Number of Words</p>
+                        <select class="filters__select filters__select_1" name="" id="">
+                            <option class="filters__option" value="">1</option>
+                        </select>
+                        <p class="filters__to">to</p>
+                        <select class="filters__select filters__select_1" name="" id="">
+                            <option class="filters__option" value="">16</option>
+                        </select>
+                        <!-- <img src="img/seach results/search-results__slider.png" alt="" class="filters__slider"> -->
+                        <div class="middle">
+                            <div class="multi-range-slider">
+                                <input type="range" id="input-left" min="0" max="100" value="0">
+                                <input type="range" id="input-right" min="0" max="100" value="75">
+                        
+                                <div class="slider">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    <div class="thumb left"></div>
+                                    <div class="thumb right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+
+                        <!-- special characters -->
+                        <p class="filters__description">Special Characters</p>
+                        <select class="filters__select" name="" id="">
+                            <option class="filters__option" value="">None</option>
+                        </select>
+
+                        <div class="filters__divider"></div>
+                        <br><br>
+
+                        <!-- top level tlds -->
+                        <p class="filters__description">Top Level TLDs</p>
+                        <select class="filters__select" name="" id="">
+                            <option class="filters__option" value="">All TLDs</option>
+                        </select>
+                        <br><br><br>
+
+                        <!-- gtlds -->
+                        <p class="filters__description">gTLDs</p>
+                        <select class="filters__select" name="" id="">
+                            <option class="filters__option" value="">All gTLDs</option>
+                        </select>
+                        <br><br><br>
+
+                        <!-- CCTLD -->
+                        <p class="filters__description">CCTLD</p>
+                        <select class="filters__select" name="" id="">
+                            <option class="filters__option" value="">All ccTLDs</option>
+                        </select>
+                        <br>
+
+                        <div class="filters__divider"></div>
+                        <br>
+
+                        <!-- button -->
+                        <button onclick="comingSoon();" class="filters__btn">Reset Filter</button>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="search__results results">
+                        <p class="results__title">Search Results</p>
+                    </div>
+
+                    <div class="results__line"></div>
+                    <div class="results__line_main"></div>
+
+                    <p class="results__display">Displaying <b>1</b> to <b>50</b> of <b>2,186</b> Domains</p>
+
+                    <a href="#" onclick="comingSoon();" class="results__share"><i class="fa fa-share-alt results__share-icon"></i>Share Results</a>
+
+                    <table class="results__table table">
+                        <tr class="table__tr table__tr_th">
+                            <th class="table__th table__th_dn">Domain Name</th>
+                            <th class="table__th table__th_price"></th>
+                            <th class="table__th table__th_btn"></th>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.co</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.game</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.io</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.xyz</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.info</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.org</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.uno</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.cloud</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.life</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td">epikdesign.world</td>
+                            <td class="table__td">$2.99</td>
+                            <td class="table__td"><button class="table__btn" onclick="comingSoon();">Add to Cart</button></td>
+                        </tr>
+                        </tr>
+                    </table>
+                    
+                    <!-- bottom -->
+                    <label class="filters__label" for="filters__select_results">Display:</label>
+                    <select class="filters__select filters__select_results" name="" id="">
+
+                        <option class="filters__option_results" value="">20 Domains per page</option>
+                    </select>
+
+                    <!-- pages -->
+                    <div class="results__pages pages">
+                        <a href="#" onclick="comingSoon();" class="pages__links pages__links_arrows">
+                            <img src="img/seach results/arrow-left.svg" alt="" class="pages__arrows_left">
+                        </a>
+
+                        <div class="pages__divider"></div>
+
+                        <a href="#" onclick="comingSoon();" class="pages__links">3</a>
+                        <a href="#" onclick="comingSoon();" class="pages__links">4</a>
+                        <a href="#" onclick="comingSoon();" class="pages__links pages__links_5">5</a>
+                        <a href="#" onclick="comingSoon();" class="pages__links">6</a>
+                        <a href="#" onclick="comingSoon();" class="pages__links">7</a>
+
+                        <div class="pages__divider"></div>
+
+                        <a href="#" onclick="comingSoon();" class="pages__links pages__links_arrows">
+                            <img src="img/seach results/arrow-right.svg" alt="" class="pages__arrows_right">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- payment methods -->
+    <div class="payment-methods">
+        <div class="container">
+            <h4 class="payment-methods__title">Easily Pay and Buy with major payment methods</h4>
+            <!-- <div class="row"> -->
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__bitcoin.svg" alt="" class="method__logo">
+                    <p class="method__title">Crypto</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__credit-card.svg" alt="" class="method__logo">
+                    <p class="method__title">Credit Cards</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__paypal.svg" alt="" class="method__logo">
+                    <p class="method__title">PayPal</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__wire-transfer.svg" alt="" class="method__logo">
+                    <p class="method__title">Wire Transfer</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__transfer-wise.svg" alt="" class="method__logo">
+                    <p class="method__title">TransferWise</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__wu.svg" alt="" class="method__logo">
+                    <p class="method__title">Western Union</p>
+                </div>
+                <div class="payment-methods__method method">
+                    <img src="img/seach results/pm__alipay.svg" alt="" class="method__logo">
+                    <p class="method__title">AliPay</p>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <!-- contacts -->
+    <section class="contacts search_results__contacts">
+        <div class="container-fluid contacts__container">
+            <div class="container">
+                <div class="contacts__info">
+                    <h3 class="info contacts__title">Legendary Customer Support</h3>
+                    <h1 class="info contacts__number">(888) 894-9026</h1>
+                    <h1 class="info contacts__number">(425) 366-8810</h1>
+                    <div class="contacts__links">
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/Facebook.svg" alt="Facebook" class="contacts__icon">
+                        </a>
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/Twitter.svg" alt="Twitter" class="contacts__icon">
+                        </a>
+                        <a href="#" onclick="comingSoon();" class="info contacts__link">
+                            <img src="img/LinkedIN.svg" alt="LinkedIN" class="contacts__icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contacts__linkblock">
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="contacts__btmlinks btmlinks">My Domains</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Manage My Domains</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Domain Registration</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">WHOIS</a>
+                </p>
+            </div>
+            <br/>
+
+            <div class="contacts__linkblock2">
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="contacts__btmlinks btmlinks">Transfers</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Transfer Into Portfolio</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Transfer To Another Registrar</a>
+                </p>
+                <p class="contacts__linkwrap">
+                    <a href="#" onclick="comingSoon();" class="btmlinks__links">Get Transfer Status</a>
+                </p>
+            </div>
+            <br/>
+
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Universal TOS</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Refund Policy</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Registrant Rights</a>
+            </p>
+            <p class="contacts__linkwrap">
+                <a href="#" onclick="comingSoon();" class="contacts__toslinks">Registration Agreement</a>
+            </p>
+            <p class="contacts__linkwrap"><a href="#" onclick="comingSoon();" class="contacts__toslinks">Privacy Policy</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- <div class="row"> -->
+                <a href="#" class="footer__links" onclick="comingSoon();">
+                    <img src="img/footer__1.svg" alt="" class="footer__img">
+                </a>
+                <a href="#" class="footer__links" onclick="comingSoon();">
+                    <img src="img/footer__2.svg" alt="" class="footer__img">
+                </a>
+                <a href="#" class="footer__links" onclick="comingSoon();">
+                    <img src="img/footer__3.svg" alt="" class="footer__img">
+                </a>
+                <p class="footer__text">Epik ® is a registered trademark of Epik Inc. Copyright © 2020 by Epik Inc. All rights reserved.<br/>WHOIS Privacy services provided by Anonymize.com</p>
+            <!-- </div> -->
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
